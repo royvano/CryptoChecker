@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kies je currency</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>
+
+</script>
+<script src="js/library.js" type="application/javascript"></script>
+    <!-- <link href="css/style.css" type="text/css" rel="stylesheet"> -->
+</head>
+<body>  
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Royvano</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <main role="main" class="container">
+<div class="starter-template">
+  <h1 style="margin-top:75px;">Kies de munten die je wilt bekijken</h1>
+  <!-- <form action="/show.html" method="get"> -->
+  <input type="checkbox" id="bitcoin" value="bitcoin" >Bitcoin<br>
+  <input type="checkbox" id="ripple" value="ripple" >Ripple<br>
+  <input type="checkbox" id="gas" value="gas">Gas<br>
+  <input type="checkbox" id="ethereum" value="ethereum" >Ethereum<br>
+  <input type="checkbox" id="cardano" value="cardano">Cardano<br>
+  <input type="checkbox" id="verge" value="verge" >Verge<br>
+  <input type="checkbox" id="litecoin" value="litecoin">Litecoin<br>
+  <input type="checkbox" id="stellar" value="stellar" >Stellar<br>
+  <button onclick="checkboxes()">bekijk</button>
+  </div>
+  </main>
+  <script>
+
+  function checkboxes(){
+  var object = new library();
+  object.init();
+  }
+  </script>
+</body>
+</html>
