@@ -5,10 +5,12 @@
     <title>Kies je currency</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>
 
 </script>
-<script src="js/library.js" type="application/javascript"></script>
+<script src="library.js" type="application/javascript"></script>
     <!-- <link href="css/style.css" type="text/css" rel="stylesheet"> -->
 </head>
 <body>  
@@ -37,8 +39,12 @@
   <input type="checkbox" id="cardano" value="cardano">Cardano<br>
   <input type="checkbox" id="verge" value="verge" >Verge<br>
   <input type="checkbox" id="litecoin" value="litecoin">Litecoin<br>
-  <input type="checkbox" id="stellar" value="stellar" >Stellar<br>
+  <input type="checkbox" id="stellar" value="stellar" >Stellar<br><br>
   <button onclick="checkboxes()">bekijk</button>
+  <br>
+  <br>
+  
+  <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
   </div>
   </main>
   <script>

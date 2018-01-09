@@ -24,24 +24,60 @@ var checkboxManager = function(){
       }
     }
 
-var apiCall = function(url){
-var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-        if (request.readyState === 4) {
-            if (request.status === 200) {
-                document.body.className = 'ok';
-                console.log(request.responseText);
-            } else if (!isValid(this.response) && this.status == 0) {
-                document.body.className = 'error offline';
-                console.log("The computer appears to be offline.");                
-            } else {
-                document.body.className = 'error';
+  var dataJSON;
+
+  var processData = function(data){
+    obj = JSON.parse(data);
+    var obj0 = obj[0];
+
+    dataJSON = data;
+    google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+  }
+
+  var drawChart = function() {
+      obj = JSON.parse(dataJSON);
+      var obj0 = obj[0];
+      console.log(obj0);
+        
+      var data = google.visualization.arrayToDataTable([
+            ['Names', 'Price in $', 'Change in %', 'Marketcap'],
+            [obj0.name, obj0.price_usd, obj0.percent_change_24h, obj0.market_cap_usd],
+            [obj0.name, obj0.price_usd, obj0.percent_change_24h, obj0.market_cap_usd],
+            [obj0.name, obj0.price_usd, obj0.percent_change_24h, obj0.market_cap_usd],
+            [obj0.name, obj0.price_usd, obj0.percent_change_24h, obj0.market_cap_usd]
+          ]);
+
+          var options = {
+            chart: {
+              title: 'Crpyto Ticker',
+              subtitle: "Choose and watch different Crypto's live!",
             }
+          };
+
+          var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+          chart.draw(data);
         }
-    };
-    request.open("GET", url , true);
-    request.send(null);
-}
+
+    var apiCall = function(url){
+      var request = new XMLHttpRequest();
+      request.onreadystatechange = function() {
+          if (request.readyState === 4) {
+              if (request.status === 200) {
+                  document.body.className = 'ok';
+                  processData(request.responseText);
+              } else if (!isValid(this.response) && this.status == 0) {
+                  document.body.className = 'error offline';
+                  console.log("The computer appears to be offline.");                
+              } else {
+                  document.body.className = 'error';
+              }
+          }
+      };
+      request.open("GET", url , true);
+      request.send(null);
+    }
 
 /**
      * Initializes the module
