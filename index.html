@@ -11,11 +11,11 @@
 
 </script>
 <script src="library.js" type="application/javascript"></script>
-    <!-- <link href="css/style.css" type="text/css" rel="stylesheet"> -->
 </head>
+
 <body>  
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Royvano</a>
+      <a class="navbar-brand" href="#">Roy van Oeteren</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,18 +30,20 @@
     </nav>
   <main role="main" class="container">
 <div class="starter-template">
-  <h1 style="margin-top:75px;">Kies de munten die je wilt bekijken</h1>
-  <!-- <form action="/show.html" method="get"> -->
-  <input type="checkbox" id="bitcoin" value="bitcoin" >Bitcoin<br>
-  <input type="checkbox" id="ripple" value="ripple" >Ripple<br>
-  <input type="checkbox" id="gas" value="gas">Gas<br>
-  <input type="checkbox" id="ethereum" value="ethereum" >Ethereum<br>
-  <input type="checkbox" id="cardano" value="cardano">Cardano<br>
-  <input type="checkbox" id="verge" value="verge" >Verge<br>
-  <input type="checkbox" id="litecoin" value="litecoin">Litecoin<br>
+  <h1 style="margin-top:75px;">Kies precies 4 munten uit die je wilt bekijken</h1>
+   
+  <input type="checkbox" id="bitcoin" value="bitcoin" >Bitcoin
+  <input type="checkbox" id="ripple" value="ripple" >Ripple
+  <input type="checkbox" id="gas" value="gas" >Gas
+  <input type="checkbox" id="ethereum" value="ethereum" >Ethereum
+  <input type="checkbox" id="cardano" value="cardano">Cardano
+  <input type="checkbox" id="verge" value="verge" >Verge
+  <input type="checkbox" id="litecoin" value="litecoin">Litecoin
   <input type="checkbox" id="stellar" value="stellar" >Stellar<br><br>
-  <button onclick="checkboxes()">bekijk</button>
+  <button onclick="checkboxes()">Bekijk</button>
+  <p id="alerto" style="color:red; margin-top:25px; font-size:30px;" ></p>
   <br>
+
   <br>
   
   <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
@@ -50,7 +52,7 @@
   <script>
 
   function checkboxes(){
-  var object = new library();
+  var object = new cryptoTools();
   object.init();
   }
   </script>
