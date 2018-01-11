@@ -11,7 +11,10 @@ var cryptoTools = function(){
     };
 
 //Function checkboxManager checks which boxes are ticked and collects ticked items in coinChosen Array
-    var checkboxManager = function(){
+    var checkboxManager = function(positioning, option){
+      defaultSettings.option = option;
+      defaultSettings.barDirection = positioning;
+
       var coins = ["bitcoin", "ripple", "gas", "ethereum", "cardano", "verge" , "litecoin", "stellar" ];
       var coinChosen = [];
       var arrayLengthChecked = 0;
@@ -55,10 +58,10 @@ var cryptoTools = function(){
 
   //Function drawChart, converts & sorts data and draws it in the chart
   var drawChart = function() { 
-
+      console.log(defaultSettings);
       var data;  
       document.getElementById("alerto").innerHTML = "";
-      if (defaultSettings.option ==  "price" && jsonArray[3].name != null){
+      if (defaultSettings.option ==  "price" && jsonArray.length >= 4){
           data = google.visualization.arrayToDataTable([
             ['Coins', "Price in $"],
             [jsonArray[0].name, parseFloat(jsonArray[0].price_usd)],
@@ -127,10 +130,11 @@ var cryptoTools = function(){
 
 /**
      * Initializes the module
-     * @param {string} [url] string containing API url
+     * @param {string} [positioning] string containing the option: horizontal or vertical 
+     * @param {string} [option] string containing the option: price or market_cap 
      */
-    var init = function(url) {
-        checkboxManager();
+    var init = function(positioning, option) {
+        checkboxManager(positioning, option);
 
     };
 

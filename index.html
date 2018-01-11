@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kies je currency</title>
+    <title>Vergelijk je currencies</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'>
 
 </script>
 <script src="library.js" type="application/javascript"></script>
@@ -53,7 +53,8 @@
 
   function checkboxes(){
   var object = new cryptoTools();
-  object.init();
+  //Choose positioning (horizontal or vertical) and option: (market_cap or price)
+  object.init('horizontal', 'market_cap');
   }
   </script>
 </body>
