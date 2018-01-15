@@ -48,22 +48,27 @@ var crypto = new cryptoTools();
 2. Zet gewenste functies in HTML tussen <script> tags
 
 ```
+//Function for checking button when pressed
 function buttonPressed(){
     var crypto = new cryptoTools();
     crypto.buttonPressed();
   }
   
+  //Function which automatically inits a plot
   function initDynamicView(){
     var crypto = new cryptoTools();
     //Choose positioning (horizontal or vertical) and option: (market_cap or price) also choose a div ID 
     crypto.initDynamicView('horizontal', 'market_cap', 'chooseCoins');
   }
-
+  
+  //Function which inits a plot after choosing your specific coins
   function drawTheChart(){
     var crypto = new cryptoTools();
   //Choose positioning (horizontal or vertical) and option: (market_cap or price)  also choose a div ID
   crypto.drawCryptoChartFromArray(['bitcoin','ripple', 'ethereum'], "divName");
   }
+  
+  //To show onload in demo
    window.onload = function(){
         drawTheChart();
         initDynamicView()
